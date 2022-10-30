@@ -1,0 +1,63 @@
+{%extends "base.html"%}
+{%load static%}
+
+{%block titleBlock%}
+<title>Frontend Monster</title>
+{%endblock%}
+
+{%block style%}
+<link rel="stylesheet" href="{%static 'css/index.css'%}">
+{%endblock%}
+
+{%block main%}
+    <div class="hero_main">
+        <div class="left_">
+            <h1>Learn Frontend in 30 days for free!</h1>
+            <p>Unlimited access to 650+ courses and books on web development, data, and design! Sign up to SitePoint Premium today and get 66% off your first three months. Limited time offer.</p>
+            <button>Get Started</button>
+        </div>
+    </div>
+
+    <h1 class="heading_">Recent articles</h1>
+
+    <div class="tutorials">
+        {%for blog in blogs%}
+        <article>
+            <a href="{%url "blogDetail" blog.slug %}"><img src={{blog.featuredImage.url}} alt="{{blog.metaDesc}}"></a>
+            <a href="{%url "blogCategory" blog.category.slug %}" class="card_category_">{{blog.category}}</a>
+            <a href="{%url "blogDetail" blog.slug %}" class="card_title_">{{blog.title}}</a>
+        </article>
+        {%empty%}
+                <div style="margin-top: 3rem;font-size:18px;">
+                <span>
+                    Thanks for your interest 😄. The articles will be uploaded soon.
+                </span>
+                </div>
+        {%endfor%}
+    </div>
+
+    {% if blogs|length > 0 %}
+    <div class="load_more">
+        <button>Load More</button>
+    </div>
+    {%endif%}
+
+    <div class="newsletter">
+        <h1>Get newsletter from Frontend Monster</h1>
+        <p>Getting to the heart of the Web tech and startup scene.</p>
+        <form action="/" method="post">
+            <div class="nl_">
+                {%csrf_token%}
+                <input class="name_" name="name" type="text" placeholder="Full name" required>
+                <input class="email_" name="email" type="email" placeholder="you@gmail.com" required>
+            </div>
+            <div class="bl_">
+                <div class="nc_">
+                    <input type="checkbox" name="agree_" id="check_" required>
+                    <label for="check_">Send me notifications about free cheat sheets and updates</label>
+                </div>
+             <button>SUBSCRIBE</button>
+            </div>
+        </form>
+    </div>
+{%endblock%}

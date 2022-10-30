@@ -1,0 +1,107 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {%block meta%}
+    {%endblock%}
+
+    {%block titleBlock%}
+    {%endblock%}
+
+    <link rel="stylesheet" href="{%static 'css/base.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    {%block style%}
+    {%endblock%}
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo" onclick="takeHome()">
+               <h2><img src={%static "images/monster.png"%} alt=""><span>frontend</span><span>monster</span></h2>
+            </div>
+            <div class="lists large_m">
+                <ul>
+                    <li><a href="/">Free Templates</a></li>
+                    <li><a href="/">Learn Frontend</a></li>
+                    <li><a href="/">Forum</a></li>
+                    <li class="search_icon"><i class="fa-solid fa-magnifying-glass"></i></li>
+                </ul>
+            </div>
+            <div id="nav-icon1">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <div class="lists sm_tg">
+        <ul>
+            <li><a href="/">Free Templates</a></li>
+            <li><a href="/">Learn Frontend</a></li>
+            <li><a href="/">Forum</a></li>
+            <li class="search_icon"><i class="fa-solid fa-magnifying-glass"></i></li>
+        </ul>
+    </div>
+    <div class="blog_categories">
+        {%for x in categories%}
+            <a href="{%url 'blogCategory' x.slug%}">{{x.name}}</a>
+        {%endfor%}
+    </div>
+    
+    {%block main%}
+    {%endblock%}
+
+    <footer>
+        <section class="footer_top">
+            <div class="c1">
+                <div class="logo" onclick="takeHome()">
+                    <h2 style="color: black;"><img src={%static "images/monster.png"%} alt=""><span>frontend</span><span>monster</span></h2>
+                </div>
+                <p class="quote_f">Whether you want to learn or to share what you know, you’ve come to the right place.</p>
+                <h4>Links</h4>
+                <div class="site_links">
+                    <a href="{%url "index"%}">Home</a>
+                    <a href="">Contact US</a>
+                </div>
+            </div>
+
+            <div class="c2">
+                <div>
+                    <h4 style="margin-top: 0.5rem ;">About</h4>
+                    <div class="site_links make_flex">
+                        <a href="">We are we?</a>
+                        <a href="">Terms of use</a>
+                        <a href="">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer_btm">
+            <p>&copy;2022 | Frontend Monster</p>
+            <p>
+                <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com"><i class="fab fa-youtube"></i></a>
+                <a href="https://linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+            </p>
+        </section>
+    </footer>
+<script>
+    document.querySelector("#nav-icon1").addEventListener("click", () => {
+        document.querySelector("#nav-icon1").classList.toggle("open")
+        document.querySelector(".sm_tg").classList.toggle("small_m")
+    })
+
+    function takeHome(){
+        window.location.href="/"
+    }
+</script>
+</body>
+</html>

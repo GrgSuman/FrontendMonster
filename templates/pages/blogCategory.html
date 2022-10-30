@@ -1,0 +1,74 @@
+{%extends "base.html"%}
+{%load static%}
+
+{%block style%}
+<link rel="stylesheet" href="{%static 'css/blogCategory.css'%}">
+{%endblock%}
+
+{%block main%}
+  <div class="wrapper">
+    <div class="contents_">
+        <h1>{{myCategory.name}}</h1>
+        <p class="category_desc">{{myCategory.metaDesc}}</p>
+        <div class="tutorials">
+            {%for blog in blogs%}
+                <article>
+                    <a href="{%url "blogDetail" blog.slug%}" class="img_"><img src="{{blog.featuredImage.url}}" alt="{{blog.metaDesc}}"></a>
+                    <section>
+                        <section class="top_bc">
+                            <span>{{blog.createdAt|date}}</span>
+                        </section>
+                        <a href="{%url "blogDetail" blog.slug%}" class="card_title_">{{blog.title}}</a>
+                        <p class="exert">{{blog.metaDesc}}...</p>
+                    </section>
+                </article>
+            {%empty%}
+                <div style="margin-top: 3rem;font-size:18px;">
+                <span>
+                    Thanks for your interest 😄. The articles will be uploaded soon.
+                </span>
+                <br>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/"><i class="fas fa-arrow-left"  style="margin-right: 5px;"></i> Explore Others</a>
+                </div>
+                </div>
+            {%endfor%}
+
+            <div class="pagination">
+                <span class="step-links">
+                    {% if blogs.has_previous %}
+                        <a href="?page=1"> First</a>
+                        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                    {% endif %}
+              
+                    <a href="#" class="current" style="background: #6b3b3b8c;">
+                         {{ blogs.number }} of {{ blogs.paginator.num_pages }}
+                    </a>
+              
+                    {% if blogs.has_next %}
+                        <a href="?page={{ blogs.next_page_number }}">Next</a>
+                        <a href="?page={{ blogs.paginator.num_pages }}">Last</a>
+                    {% endif %}
+                </span>
+              </div>
+
+            <!-- <div class="more_pages">
+               <a href="">1</a>
+               <a href="">2</a>
+               <a href="">3</a>
+               <a href="">4</a>
+               <a href="">5</a>
+               <a href="">6</a>
+               <p>...</p>
+               <a href="">7</a>
+               <a href="">8</a>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="ads_">
+
+    </div>
+   
+  </div>
+{%endblock%}

@@ -1,0 +1,260 @@
+.hero_main{
+    min-height: 400px;
+    width: 100%;
+    margin: auto;
+    background: #232323;
+    padding: 3rem 5%;
+    /* background: url('../images/hero.jpg'); */
+}
+
+.left_{
+    width: 70%;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    margin-top: 1rem;
+}
+.left_ p{
+    margin: 2rem 0;
+    font-size: 1.3rem;
+    line-height: 1.6em;
+    color: rgba(255, 255, 255, 0.8);
+}
+.left_ button{
+    height: 50px;
+    width: 300px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    border-radius: 2px;
+    background: linear-gradient(to right, #fdfc47, #24fe41); 
+}
+.left_ button:active{
+    transform: scale(0.9);
+    transition: .1s linear;
+}
+
+/* tutorials grid */
+.tutorials{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    padding: 0 5%;
+    margin-bottom: 3rem;
+}
+.tutorials article a{
+    display: block;
+}
+
+.card_category_{
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 0.8rem;
+    margin: 0.8rem 0;
+    font-weight: 500;
+    width: fit-content;
+}
+.card_category_:hover{
+    color: black;
+}
+.tutorials article img{
+    background-color: gray;
+}
+.tutorials article img:hover{
+    opacity: 0.9;
+}
+.card_title_{
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: black;
+}
+.card_title_:hover{
+    color: rgba(0, 0, 0, 0.6);
+}
+.tutorials article img{
+    height: 200px;
+    width: 100%;
+}
+/* tutorials grid end */
+
+/* newsletter start */
+.newsletter{
+    display: flex;
+    padding: 4rem 3%;
+    flex-direction: column;
+    align-items: center;
+    background: #64f;
+    margin: 3rem 0;
+}
+.newsletter h1{
+    color: white;
+}
+.newsletter p{
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0.5rem 0;
+}
+.newsletter form{
+    margin-top: 1rem;
+    position: relative;
+    width: 70%;
+}
+.nl_{
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+.name_{
+    flex: 1;
+}
+.email_{
+    flex: 1.5;
+}
+.newsletter .name_,.newsletter .email_{
+    width: 100%;
+    background: #8c73ff;
+    border: none;
+    outline: none;
+    padding:0.8rem 2rem;
+    color: white;
+    font-size: 1.2rem;
+}
+.newsletter input[type="checkbox"]{
+    zoom: 1.5;
+}
+.newsletter input::placeholder{
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.newsletter label{
+    margin-left: 1rem;
+    width: 95%;
+}
+.nc_{
+    display: flex;
+    color: white;
+    font-size: 18px;
+    align-items: center;
+}
+.newsletter button{
+    background: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 1px solid white;
+    outline: none;
+    cursor: pointer;
+    padding:0.5rem 2rem;
+    width: 300px;
+}
+
+.bl_{
+    gap: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+.newsletter button:active{
+    transition: .2s linear;
+    transform: scale(0.9);
+}
+.socials{
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 2rem;
+}
+.socials a{
+    display: block;
+    font-size: 1.2rem;
+    color: white;
+}
+/* newsletter end */
+
+.load_more {
+    display: flex;
+    justify-content: center;
+}
+.load_more button{
+    height: 50px;
+    width: 300px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    border-radius: 2px;
+    background: linear-gradient(to right, #fdfc47, #24fe41); 
+}
+.load_more button:active{
+    transform: scale(0.9);
+    transition: .1s linear;
+}
+
+
+/* responsive */
+
+@media(max-width:1200px){
+    .heading_{
+        margin: 2rem 0;
+        padding: 0 3%;
+    }
+    .tutorials{
+        padding: 0 3%;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .newsletter form{
+        width: 100%;
+    }
+}
+@media(max-width:992px){
+    .hero_main {
+        padding: 2rem 3%;
+    }
+    .left_{
+        width: 100%;
+    }
+    .left_ p{
+        font-size: 1rem;
+    }
+      
+}
+@media(max-width:768px){
+   .card_category_{
+    margin: 0.5rem 0;
+   }
+   .card_title_{
+    font-size: 1rem;
+   }
+   .newsletter input::placeholder{
+    font-size: 1rem;
+   }
+   .newsletter button{
+    font-size: 1rem;
+   }
+      
+}
+@media(max-width:600px){
+   .tutorials{
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+   }
+   .tutorials article img {
+    height: 130px;
+    }
+    .newsletter button {
+        top: -9px;
+        padding:2rem 1.5rem;
+    }
+    .newsletter input {
+        padding:2rem 1.5rem;
+    }
+    .newsletter {
+        padding: 2rem 3%;
+    }
+    .newsletter h1{
+        font-size: 1.5rem;
+    }
+}

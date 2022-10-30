@@ -1,0 +1,123 @@
+.wrapper{
+    padding: 3rem 5%;
+}
+.wrapper{
+    display: flex;
+}
+.contents_{
+    flex: 2.5;
+}
+.category_desc{
+    font-size: 1.1rem;
+    width: 80%;
+    color: #212121;
+    margin: 1rem 0;
+}
+.ads_{
+    flex: 1;
+    height: 400px;
+    width: 100%;
+    background: wheat;
+    display: none;
+}
+
+/* tutorials grid */
+.tutorials{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    margin: 3rem 0;
+}
+.tutorials article a{
+    display: block;
+}
+.tutorials article{
+    display: flex;
+    gap: 1rem;
+}
+
+.card_category_,.top_bc{
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 0.8rem;
+    margin: 5px 0;
+    margin-top: 0;
+    font-weight: 500;
+    width: fit-content;
+}
+.card_category_:hover{
+    color: black;
+}
+.exert{
+    width: 70%;
+    margin: 1rem 0;
+}
+.tutorials article img{
+    background-color: gray;
+}
+.tutorials article img:hover{
+    opacity: 0.9;
+}
+.card_title_{
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: black;
+}
+.card_title_:hover{
+    color: rgba(0, 0, 0, 0.6);
+}
+.tutorials article img{
+    height: 200px;
+    width: 300px;
+}
+/* tutorials grid end */
+
+.more_pages a{
+    display: block;
+    font-size: 1.1rem;
+    color: rgba(0, 0, 0, 0.8);
+}
+.more_pages a:hover{
+    color: blueviolet;
+}
+.more_pages p{
+    font-size: 1.1rem;
+}
+.more_pages{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+
+/* responsive */
+
+/* @media(max-width:1200px){
+   
+} */
+@media(max-width:992px){
+    .wrapper {
+        padding: 3rem 3%;
+        display: block;
+    }
+    
+    .exert {
+        width: 100%;
+    }
+    .category_desc {
+        width: 100%;
+    }
+}
+@media(max-width:768px){
+
+      .tutorials article{
+        flex-direction: column;
+      }
+      .tutorials article img {
+        height: 230px;
+        width: 100%;
+    }
+}
+/* @media(max-width:600px){
+
+} */
