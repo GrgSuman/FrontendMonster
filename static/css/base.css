@@ -16,6 +16,21 @@ a{
     text-decoration: none;
 }
 
+.messages{
+    display: flex;
+    justify-content: space-between;
+    background: #50fd42;
+    font-weight: 600;
+    padding: 1rem 3%;
+    align-items: center;
+}
+.messages li{
+  list-style: none;
+}
+.messages i{
+    cursor: pointer;
+}
+
 .spacer{
     padding: 0 8%;
 }
