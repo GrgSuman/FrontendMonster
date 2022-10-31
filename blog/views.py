@@ -5,6 +5,7 @@ from django.contrib import messages
 import re
 from django.shortcuts import render,redirect
 from .utils import getAllCategories,createUserSubscription
+from course.models import CourseCategory
 
 regexEmail = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
 
@@ -12,9 +13,13 @@ regexEmail = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
 class HomePageView(View):
     def get(self,request):
         blogs = Blog.objects.filter(postStatus=True).order_by("-id")[:12]
+        # messages.error(request,"Please enter both name and email")
+        frontend_course = CourseCategory.objects.get(id=1)
+        print(frontend_course)
         context = {
             'categories':getAllCategories(),
-            'blogs':blogs
+            'blogs':blogs,
+            'frontend_course':frontend_course
         }
         return render(request,"pages/index.html",context)
     

@@ -20,6 +20,15 @@
 </head>
 <body>
 
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        <i class="fa-solid fa-xmark"></i>
+    </ul>
+{% endif %}
+
     <header>
         <nav>
             <div class="logo" onclick="takeHome()">
@@ -53,6 +62,7 @@
             <a href="{%url 'blogCategory' x.slug%}">{{x.name}}</a>
         {%endfor%}
     </div>
+
     
     {%block main%}
     {%endblock%}
