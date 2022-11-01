@@ -10,10 +10,10 @@ ftp = ftplib.FTP(FTP_HOST, FTP_USER, FTP_PASS)
 ftp.encoding = "utf-8"
 
 # # local file name you want to upload and replace if exists
-# filename = "db.sqlite3"
-# with open(filename, "rb") as file:
-#     # use FTP's STOR command to upload the file
-#     ftp.storbinary(f"STOR {filename}", file)
+filename = "db.sqlite3"
+with open(filename, "rb") as file:
+    # use FTP's STOR command to upload the file
+    ftp.storbinary(f"STOR {filename}", file)
 
 # # list current files & directories
 # ftp.dir()

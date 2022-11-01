@@ -15,7 +15,6 @@ class HomePageView(View):
         blogs = Blog.objects.filter(postStatus=True).order_by("-id")[:12]
         # messages.error(request,"Please enter both name and email")
         frontend_course = CourseCategory.objects.get(id=1)
-        print(frontend_course)
         context = {
             'categories':getAllCategories(),
             'blogs':blogs,

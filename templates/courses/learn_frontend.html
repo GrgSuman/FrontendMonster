@@ -1,0 +1,49 @@
+
+{%extends "base.html"%}
+{%load static%}
+
+{%block titleBlock%}
+<title>Frontend Monster</title>
+{%endblock%}
+
+{%block style%}
+<link rel="stylesheet" href="{%static 'css/learn_frontend.css'%}">
+<link rel="stylesheet" href="{%static 'css/blogCategory.css'%}">
+{%endblock%}
+
+{%block main%}
+    <div class="learn_">
+        <div class="image_">
+            <img class="featured" src="{{myCategory.featuredImage.url}}" alt="{{myCategory.name}}">
+        </div>
+        <h1 style="margin:1rem 0 ;font-weight :500;font-size:1.8rem">{{myCategory.name}}</h1>
+        <p>{{myCategory.metaDesc}}</p>
+
+        <h1 style="margin:1rem 0 ;font-weight :500;font-size:1.8rem">Contents</h1>
+
+        <div class="tutorials">
+            {%for course in courses%}
+                <article>
+                    <a href="{%url "blogDetail" course.slug%}" class="img_"><img src="{{course.featuredImage.url}}" alt="{{course.metaDesc}}"></a>
+                    <section>
+                        <!-- <section class="top_bc">
+                            <span>{{course.createdAt|date}}</span>
+                        </section> -->
+                        <a href="{%url "blogDetail" course.slug%}" class="card_title_">{{course.title}}</a>
+                        <p class="exert">{{course.metaDesc}}...</p>
+                    </section>
+                </article>
+            {%empty%}
+                <div style="font-size:18px;">
+                <span>
+                    Thanks for your interest 😄. The articles will be uploaded soon.
+                </span>
+                <br>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/"><i class="fas fa-arrow-left"  style="margin-right: 5px;"></i> Explore Others</a>
+                </div>
+                </div>
+            {%endfor%}
+        </div> 
+    </div>
+{%endblock%}
