@@ -1,0 +1,38 @@
+
+{%extends "base.html"%}
+{%load static%}
+
+{%block titleBlock%}
+<title>Frontend Monster</title>
+{%endblock%}
+
+{%block style%}
+<link rel="stylesheet" href="{%static 'css/all_template_category.css'%}">
+{%endblock%}
+
+{%block main%}
+    <div class="template_categories_">
+        <h1 style="margin:1rem 0 ;font-weight :500;font-size:1.8rem">{{myCategory.name}}</h1>
+        <p class="metaDesc">{{myCategory.metaDesc}}</p>
+
+        <div class="all_templates_html">
+
+            {%for template in templates%}
+                <div class="template_" onclick="takeDetail('{{template.slug}}')">
+                    <h2>{{template.title}}</h2>
+                    <img src="{{template.featuredImage.url}}" alt="{{template.metaDesc}}">
+                </div>
+            {%empty%}
+            <div style="font-size:18px;">
+            <span>
+                Thanks for your interest 😄. The articles will be uploaded soon.
+            </span>
+            <br>
+            <div style="margin-top: 1.5rem;">
+                <a href="/"><i class="fas fa-arrow-left"  style="margin-right: 5px;"></i> Explore Others</a>
+            </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+{%endblock%}

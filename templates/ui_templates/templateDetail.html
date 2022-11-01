@@ -1,0 +1,35 @@
+{%extends "base.html"%}
+{%load static%}
+
+{%block style%}
+<link rel="stylesheet" href="{%static 'css/prism.css'%}">
+<link rel="stylesheet" href="{%static 'css/blogDetail.css'%}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{%endblock%}
+
+{%block main%}
+<div class="blogMain">
+
+    <div class="detail_l">
+        <h1 class="d_title" style="margin: 0;">{{blog.title}}</h1>
+
+        <section class="top_bc">
+                <span>{{ blog.createdAt|date:"d F Y" }}</span>
+        </section>
+
+        <p class="desc_">{{blog.metaDesc}}</p>
+
+
+        <div class="mainContent">
+            {{blog.body|safe}}
+        </div>
+    </div>
+
+    <div class="detail_r">
+     <div class="sideAds">
+         <p>Ads</p>
+     </div>
+    </div>
+
+</div>
+{%endblock%}

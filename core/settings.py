@@ -47,13 +47,26 @@ TINYMCE_DEFAULT_CONFIG = {
     "height": "320px",
     "width": "960px",
     "menubar": "file edit view insert format tools table help",
-    "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code "
+    "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks codesample code "
     "fullscreen insertdatetime media table paste code help wordcount spellchecker",
-    "toolbar": "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft "
+    "toolbar": "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft codesample"
     "aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor "
     "backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | "
     "fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | "
     "a11ycheck ltr rtl | showcomments addcomment code",
+    'codesample_global_prismjs': True,
+    'codesample_languages': [
+        {'text': 'HTML/XML', 'value': 'markup'},
+        {'text': 'JavaScript', 'value': 'javascript'},
+        {'text': 'CSS', 'value': 'css'},
+        {'text': 'PHP', 'value': 'php'},
+        {'text': 'Ruby', 'value': 'ruby'},
+        {'text': 'Python', 'value': 'python'},
+        {'text': 'Java', 'value': 'java'},
+        {'text': 'C', 'value': 'c'},
+        {'text': 'C#', 'value': 'csharp'},
+        {'text': 'C++', 'value': 'cpp'}
+    ],
     "custom_undo_redo_levels": 10,
     # "language": "es_ES",  # To force a specific language instead of the Django current language.
 }
