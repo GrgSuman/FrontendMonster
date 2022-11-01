@@ -7,6 +7,19 @@
     margin-right: 2.5rem;
 }
 
+.mainContent pre,.mainContent code{
+    height: 15em!important;
+}
+.language-markup{
+    white-space: pre-wrap!important;
+    height: 20em;
+}
+
+.desc_{
+    margin:1rem 0;
+    font-size: 18px;
+}
+
 .detail_r{
     flex: 1;
     height: 100vh;
@@ -57,6 +70,9 @@
 .featured{
     width: 100%;
     margin: 1.5rem 0;
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
 }
 
 .mainContent p,.mainContent span,.mainContent{
