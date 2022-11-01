@@ -1,0 +1,33 @@
+.learn_{
+    padding: 3rem 20%;
+    color: #212121;
+}
+
+.featured{
+    width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+}
+.learn_ {
+    font-size: 18px;
+}
+
+.list_{
+    margin: 1rem 0;
+    list-style: none;
+}
+
+.list_ a{
+    color: #2276c8;
+}
+
+@media(max-width:1200px){
+    .learn_{
+        padding: 2rem 5%;
+    }
+}
+@media(max-width:768px){
+    .learn_{
+        padding: 2rem 3%;
+    }
+}

@@ -8,6 +8,8 @@ class CourseCategory(models.Model):
     slug = models.SlugField(default="")
     keywords = models.CharField(max_length=400,default="")
     metaDesc = models.CharField(max_length=400,default="")
+    featuredImage = models.ImageField(default="defaultBG.png",upload_to="uploads/images")
+
 
     def __str__(self):
         return self.name
@@ -18,7 +20,7 @@ class Course(models.Model):
     featuredImage = models.ImageField(default="defaultBG.png",upload_to="uploads/images")
     keywords = models.CharField(max_length=400,default="")
     metaDesc = models.CharField(max_length=400,default="")
-    category = models.ForeignKey(CourseCategory,on_delete=models.PROTECT,related_name="category",null=True,blank=True)
+    category = models.ForeignKey(CourseCategory,on_delete=models.PROTECT,related_name="course_collection",null=True,blank=True)
     body  =    HTMLField(blank=True,null=True)
     author = models.ForeignKey(User,on_delete=models.PROTECT)
     createdAt = models.DateTimeField(null=True)

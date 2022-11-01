@@ -36,8 +36,9 @@
             </div>
             <div class="lists large_m">
                 <ul>
-                    <li><a href="/">Free Templates</a></li>
-                    <li><a href="/">Learn Frontend</a></li>
+                    <!-- <li><a href="/">Free Templates</a></li> -->
+                    <li><a href="/">HTML CSS JS Templates</a></li>
+                    <li><a href="{%url 'course_category' 'learn-frontend-30-days'%}">Learn Frontend</a></li>
                     <li><a href="/">Forum</a></li>
                     <li class="search_icon"><i class="fa-solid fa-magnifying-glass"></i></li>
                 </ul>
@@ -51,7 +52,8 @@
     </header>
     <div class="lists sm_tg">
         <ul>
-            <li><a href="/">Free Templates</a></li>
+            <!-- <li><a href="/">Free Templates</a></li> -->
+            <li><a href="/">HTML CSS JS Templates</a></li>
             <li><a href="/">Learn Frontend</a></li>
             <li><a href="/">Forum</a></li>
             <li class="search_icon"><i class="fa-solid fa-magnifying-glass"></i></li>
@@ -111,6 +113,10 @@
 
     function takeHome(){
         window.location.href="/"
+    }
+    
+    function takeFrontend(){
+        window.location.href="/courses/learn-frontend-30-days"
     }
 </script>
 </body>

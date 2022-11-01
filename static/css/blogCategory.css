@@ -51,9 +51,9 @@
     width: 70%;
     margin: 1rem 0;
 }
-.tutorials article img{
+/* .tutorials article img{
     background-color: gray;
-}
+} */
 .tutorials article img:hover{
     opacity: 0.9;
 }
@@ -68,6 +68,12 @@
 .tutorials article img{
     height: 200px;
     width: 300px;
+    object-fit: contain;
+}
+.tutorials section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 /* tutorials grid end */
 
