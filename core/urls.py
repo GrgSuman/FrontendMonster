@@ -8,6 +8,8 @@ urlpatterns = [
     path("",include("blog.urls")),
     path("courses/",include("course.urls")),
     path("ui/",include("ui_templates.urls")),
+    path('tinymce/', include('tinymce.urls')),
+    
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
