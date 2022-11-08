@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'ui_templates'
 ]
 
+DATA_UPLOAD_MAX_MEMORY_SIZE = 5242880 # 5 MB
+
 TINYMCE_DEFAULT_CONFIG = {
     "height": "320px",
     "width": "960px",
