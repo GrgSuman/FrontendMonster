@@ -7,12 +7,12 @@
     margin-right: 2.5rem;
 }
 
-.mainContent pre,.mainContent code{
+/* .mainContent pre,.mainContent code{
     height: 15em!important;
-}
+} */
 .language-markup{
     white-space: pre-wrap!important;
-    height: 20em;
+    max-height: 20em;
 }
 
 .desc_{
@@ -101,7 +101,7 @@
 }
 .mainContent img{
     max-width: 100%;
-    height: fit-content;
+    /* height: fit-content; */
 }
 
 @media(max-width:1200px){
