@@ -13,23 +13,24 @@
 
 {%block main%}
     <div class="learn_">
-        <div class="image_">
-            <img class="featured" src="{{myCategory.featuredImage.url}}" alt="{{myCategory.name}}">
-        </div>
+       
         <h1 style="margin:1rem 0 ;font-weight :500;font-size:1.8rem">{{myCategory.name}}</h1>
-        <p>{{myCategory.metaDesc}}</p>
+        <!-- <div class="image_">
+            <img class="featured" src="{{myCategory.featuredImage.url}}" alt="{{myCategory.name}}">
+        </div> -->
+        <p style="margin-top: 1rem;">{{myCategory.metaDesc}}</p>
 
-        <h1 style="margin:1rem 0 ;font-weight :500;font-size:1.8rem">Contents</h1>
+        <h1 style="margin:2rem 0 ;font-weight :500;font-size:1.8rem">Contents</h1>
 
-        <div class="tutorials">
+        <div class="tutorials" style="margin: 0;">
             {%for course in courses%}
                 <article>
-                    <a href="{%url "blogDetail" course.slug%}" class="img_"><img src="{{course.featuredImage.url}}" alt="{{course.metaDesc}}"></a>
+                    <a href="{%url "course_detail" course.slug%}" class="img_"><img src="{{course.featuredImage.url}}" alt="{{course.metaDesc}}"></a>
                     <section>
                         <!-- <section class="top_bc">
                             <span>{{course.createdAt|date}}</span>
                         </section> -->
-                        <a href="{%url "blogDetail" course.slug%}" class="card_title_">{{course.title}}</a>
+                        <a href="{%url "course_detail" course.slug%}" class="card_title_">{{course.title}}</a>
                         <p class="exert">{{course.metaDesc}}...</p>
                     </section>
                 </article>

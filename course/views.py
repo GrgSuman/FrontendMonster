@@ -15,3 +15,11 @@ class CourseCategoryView(View):
             'courses':courses
         }
         return render(request,"courses/learn_frontend.html",context)
+
+def courseDetail(request,courseDetail):
+    course = Course.objects.get(slug=courseDetail)
+    context={
+        "course":course,
+        'categories':getAllCategories()
+    }
+    return render(request,"courses/courseDetail.html",context)
